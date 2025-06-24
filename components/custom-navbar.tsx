@@ -13,18 +13,10 @@ import {
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-
 const menuItems = [
-  "Profile",
-  "Dashboard",
-  "Activity",
-  "Analytics",
-  "System",
-  "Deployments",
-  "My Settings",
-  "Team Settings",
-  "Help & Feedback",
-  "Log Out",
+  { label: "Home", href: "/" },
+  { label: "Team", href: "/tim" },
+  { label: "Program", href: "/" },
 ];
 
 export default function CustomNavbar() {
@@ -54,39 +46,37 @@ export default function CustomNavbar() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Desktop Navbar */}
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link href="/">
-            <p className="text-white">Home</p>
+            <p className="text-white hover:underline">Home</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link aria-current="page" href="tim">
-            <p className="text-white">Team</p>
+          <Link href="/tim">
+            <p className="text-white hover:underline">Team</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            <p className="text-white">Program</p>
+          <Link href="/program">
+            <p className="text-white hover:underline">Program</p>
           </Link>
         </NavbarItem>
       </NavbarContent>
 
+      {/* Mobile Menu */}
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
-              className="w-full text-lg"
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)} // <-- Ini bagian pentingnya
+              className={`w-full text-lg hover:underline ${
+                index === menuItems.length - 1 ? "text-red-500" : ""
+              }`}
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
