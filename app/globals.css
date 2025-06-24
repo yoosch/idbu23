@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin './../hero.ts';
+
+@config "../tailwind.config.mjs";
 
 :root {
   --background: #ffffff;
