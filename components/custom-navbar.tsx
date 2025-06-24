@@ -76,7 +76,7 @@ export default function CustomNavbar() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full"
+              className="w-full text-lg"
               color={
                 index === 2
                   ? "primary"
@@ -85,7 +85,6 @@ export default function CustomNavbar() {
                   : "foreground"
               }
               href="#"
-              size="lg"
             >
               {item}
             </Link>
