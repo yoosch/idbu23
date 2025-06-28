@@ -16,7 +16,7 @@ import Link from "next/link";
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/tim" },
-  { label: "Program", href: "/" },
+  { label: "Program", href: "/program" },
 ];
 
 export default function CustomNavbar() {
