@@ -32,21 +32,30 @@ export default function CustomNavbar() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className={`fixed top-0 w-full z-50 text-white transition-colors duration-300 ${
+      className={`fixed top-0 pt-[1%] w-full z-50 text-white transition-colors duration-300 ${
         scrolled ? "bg-gray-900 shadow-md" : "bg-transparent"
       }`}
     >
-      <NavbarContent>
+      {/* Mobile Layout */}
+      <NavbarContent className="sm:hidden flex justify-between items-center w-full px-4">
+        {/* Logo di kiri */}
+        <NavbarBrand>
+          <Image alt="Logo" className="w-12" src="/logo.png" />
+        </NavbarBrand>
+
+        {/* Toggle di kanan */}
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
         />
+      </NavbarContent>
+
+      {/* Desktop Layout */}
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
-          <Image alt="Logo" className="w-30" src="/logo.png" />
+          <Image alt="Logo" className="w-16" src="/logo.png" />
         </NavbarBrand>
       </NavbarContent>
 
-      {/* Desktop Navbar */}
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link href="/">
@@ -71,7 +80,7 @@ export default function CustomNavbar() {
           <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
               href={item.href}
-              onClick={() => setIsMenuOpen(false)} // <-- Ini bagian pentingnya
+              onClick={() => setIsMenuOpen(false)}
               className={`w-full text-lg hover:underline ${
                 index === menuItems.length - 1 ? "text-red-500" : ""
               }`}
