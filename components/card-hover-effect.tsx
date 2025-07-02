@@ -65,7 +65,7 @@ export const HoverEffect = ({
                 <Image
                   alt={item.title}
                   className="object-cover rounded-xl"
-                  src={"/images.jpeg"}
+                  src={`/foto/${item.image || "images.jpg"}`}
                   width={270}
                 />
               </CardBody>
