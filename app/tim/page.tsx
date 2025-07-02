@@ -239,7 +239,7 @@ const teamMembers = [
 
 export default function TimPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16 px-6">
+    <div className="min-h-screen bg-gray-900 text-white py-24 px-6">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-bold">Tim KKN Tedunan</h1>
         <p className="text-gray-400 mt-2">
