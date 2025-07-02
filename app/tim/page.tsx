@@ -203,7 +203,7 @@ const teamMembers = [
   {
     title: "RAMADHANI YUANS DARMAWAN",
     description: "Teknologi Rekayasa Otomasi D4",
-    image: "40040322650053.jpg",
+    image: "40040322650053.jpeg",
   },
   {
     title: "WISNU ADI WICAKSONO",
