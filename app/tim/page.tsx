@@ -3,7 +3,6 @@
 import { HoverEffect } from "../../components/card-hover-effect";
 
 const teamMembers = [
-  { title: "MUHAMMAD RIZQY AULIA", description: "Akuntansi S1" },
   {
     title: "AULIA CANDRA PERTIWI",
     description: "Akuntansi S1",
