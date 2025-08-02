@@ -238,21 +238,23 @@ const teamMembers = [
 
 export default function TimPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-24 px-6">
+    <div className="min-h-screen bg-pink-50 text-pink-800 py-24 px-6">
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold">Tim KKN Tedunan</h1>
-        <p className="text-gray-400 mt-2">
+        <h1 className="text-4xl font-bold text-fuchsia-600 drop-shadow-sm">
+          Tim KKN Tedunan
+        </h1>
+        <p className="text-pink-500 mt-2">
           Anggota yang terlibat dalam program KKN 2025
         </p>
       </div>
       <HoverEffect items={teamMembers} />
-      <footer className="bg-gray-900 text-white py-8 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-4 border-t border-gray-700 pt-6">
+      <footer className="bg-pink-100 text-fuchsia-700 py-8 px-4 mt-12">
+        <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-4 border-t border-pink-200 pt-6">
           <div className="text-center text-sm">
-            Made with <span className="text-red-500">❤️</span> by{" "}
+            Made with <span className="text-red-400">❤️</span> by{" "}
             <strong>TIM 23 KKNT UNDIP 2025</strong>
           </div>
-          <div className="text-xs text-gray-400">
+          <div className="text-xs text-pink-400">
             © {new Date().getFullYear()} All rights reserved.
           </div>
         </div>

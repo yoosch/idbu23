@@ -32,20 +32,18 @@ export default function CustomNavbar() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className={`fixed top-0 py-[1%] w-full z-50 text-white transition-colors duration-300 ${
-        scrolled ? "bg-gray-900 shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 py-[1%] w-full z-50 transition-colors duration-300 ${
+        scrolled ? "bg-pink-200 shadow-md" : "bg-pink-100/80 backdrop-blur-md"
+      } border-b border-pink-300`}
     >
       {/* Mobile Layout */}
       <NavbarContent className="sm:hidden flex justify-between items-center w-full px-4">
-        {/* Logo di kiri */}
         <NavbarBrand>
           <Image alt="Logo" className="w-12" src="/logo.png" />
         </NavbarBrand>
-
-        {/* Toggle di kanan */}
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="text-pink-600"
         />
       </NavbarContent>
 
@@ -59,30 +57,30 @@ export default function CustomNavbar() {
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link href="/">
-            <p className="text-white hover:underline">Home</p>
+            <p className="text-pink-700 hover:text-fuchsia-600 font-semibold">Home</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href="/tim">
-            <p className="text-white hover:underline">Team</p>
+            <p className="text-pink-700 hover:text-fuchsia-600 font-semibold">Team</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href="/program">
-            <p className="text-white hover:underline">Program</p>
+            <p className="text-pink-700 hover:text-fuchsia-600 font-semibold">Program</p>
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       {/* Mobile Menu */}
-      <NavbarMenu>
+      <NavbarMenu className="bg-pink-100 text-center text-pink-700">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`w-full text-lg hover:underline ${
-                index === menuItems.length - 1 ? "text-red-500" : ""
+              className={`w-full text-lg py-2 font-semibold hover:text-fuchsia-600 ${
+                index === menuItems.length - 1 ? "text-red-400" : ""
               }`}
             >
               {item.label}
