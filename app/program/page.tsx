@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { Timeline } from "../../components/timeline";
 
 export default function ProgramPage() {
-  const multiData = [
+  type TimelineItem = {
+    title: string;
+    content: React.ReactNode;
+  };
+
+  const multiData: TimelineItem[] = [
     // Tambahkan data multidisiplin di sini jika diperlukan
   ];
 
-  const monoData = [
+  const monoData: TimelineItem[] = [
     {
       title: "Sosialisasi Posyandu Remaja",
       content: (
